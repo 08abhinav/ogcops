@@ -123,12 +123,13 @@ import githubTerminalStyle from './github/terminal-style';
 import githubCodeWindow from './github/code-window';
 import githubMinimalBadge from './github/minimal-badge';
 import githubMatrix from './github/matrix';
+import githubContributorsWall from './github/contributors-wall';
 import githubIssueCard from './github/issue-card';
 
 [
   githubRepoCard, githubContributionGraph, githubReadmeHero, githubReleaseNotes,
   githubLanguageBars, githubStarsBanner, githubTerminalStyle, githubCodeWindow,
-  githubMinimalBadge, githubMatrix,
+  githubMinimalBadge, githubMatrix, githubContributorsWall,
   githubIssueCard,
 ].forEach(registerTemplate);
 
