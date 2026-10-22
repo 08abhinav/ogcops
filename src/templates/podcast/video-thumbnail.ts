@@ -74,7 +74,7 @@ const template: TemplateDefinition = {
                 type: 'svg',
                 props: {
                   width: 36,
-                  height: 24,
+                  height: 44,
                   viewBox: '0 0 36 44',
                   style: {
                     marginLeft: '8px',

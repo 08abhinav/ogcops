@@ -180,9 +180,9 @@ const template: TemplateDefinition = {
                           children: {
                             type: 'svg',
                             props: {
-                              width: 24,
-                              height: 28,
-                              viewBos: '0 0 20 24',
+                              width: 16,
+                              height: 20,
+                              viewBox: '0 0 16 20',
                               style: {
                                 marginLeft: '4px',
                               },
