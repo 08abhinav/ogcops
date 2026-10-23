@@ -1,5 +1,5 @@
 import type { TemplateDefinition } from '../types';
-import { truncate, autoFontSize, commonFields, isLightColor } from '../utils';
+import { truncate, autoFontSize, commonFields, isLightColor, mixColors } from '../utils';
 
 const template: TemplateDefinition = {
   id: 'event-winners',
@@ -53,7 +53,9 @@ const template: TemplateDefinition = {
     ]);
 
     // Readable number color on the accent-filled 1st place block
-    const accentTextColor = isLightColor(accentColor) ? '#111111' : '#FFFFFF';
+    const onAccentColor = isLightColor(accentColor) ? '#111111' : '#FFFFFF';
+    // Accent used as text on the page background: darkened on light backgrounds
+    const accentTextColor = isLightColor(bgColor) ? mixColors(accentColor, '#000000', 0.45) : accentColor;
 
     const podiumColumn = (
       place: number,
@@ -124,7 +126,7 @@ const template: TemplateDefinition = {
                   style: {
                     fontSize: isFirst ? '96px' : '72px',
                     fontWeight: 700,
-                    color: isFirst ? accentTextColor : `${textColor}cc`,
+                    color: isFirst ? onAccentColor  : `${textColor}cc`,
                     fontFamily: 'JetBrains Mono, monospace',
                   },
                   children: String(place),
@@ -176,7 +178,7 @@ const template: TemplateDefinition = {
                           style: {
                             fontSize: '20px',
                             fontWeight: 600,
-                            color: accentColor,
+                            color: accentTextColor,
                             letterSpacing: '0.12em',
                             textTransform: 'uppercase',
                             marginBottom: '12px',
